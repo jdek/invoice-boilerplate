@@ -109,7 +109,7 @@ $endfor$
 
 \begin{flushright}
   \small
-  $city$, \today
+  \today
 \end{flushright}
 
 \vspace{1em}
@@ -122,8 +122,8 @@ $endfor$
 \STautoround*{2} % Get spreadtab to always display the decimal part
 $if(commasep)$\STsetdecimalsep{,}$endif$ % Use comma as decimal separator
 
-\begin{spreadtab}{{tabular}[t t t]{lp{8.2cm}r}}
-  \hdashline[1pt/1pt]
+\begin{spreadtab}{{tabular}[t t t]{lp{9.8cm}r}}
+  \hline
   @ \noalign{\vskip 2mm} \textbf{Pos.} & @ \textbf{Description} & @ \textbf{Prices in $currency$} \\ \hline
       $for(service)$ @ \noalign{\vskip 2mm} \refstepcounter{pos} \thepos 
         & @ $service.description$ 
@@ -144,8 +144,6 @@ $if(commasep)$\STsetdecimalsep{,}$endif$ % Use comma as decimal separator
 \sffamily
 \small
 $closingnote$
-
-\medskip
 
 $author$
 

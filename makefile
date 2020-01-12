@@ -1,10 +1,17 @@
+default: all
+
 TEX = pandoc
 src = template.tex details.yml
 FLAGS = --pdf-engine=xelatex
 
-output.pdf : $(src)
-	$(TEX) $(filter-out $<,$^ ) -o $@ --template=$< $(FLAGS)
+INVOICES = $(wildcard *.yml)
+PDFS = $(INVOICES:%.yml=%.pdf)
+
+%.pdf: %.yml template.tex
+	$(TEX) -f markdown $< -o $@ --template=template.tex $(FLAGS)
+
+all: $(PDFS)
 
 .PHONY: clean
-clean :
-	rm output.pdf
+clean:
+	rm *.pdf
