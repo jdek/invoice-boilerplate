@@ -4,7 +4,7 @@ TEX = pandoc
 src = template.tex details.yml
 FLAGS = --pdf-engine=xelatex
 
-INVOICES = $(wildcard *.yml)
+INVOICES = $(filter-out details.yml,$(wildcard *.yml))
 PDFS = $(INVOICES:%.yml=%.pdf)
 
 %.pdf: %.yml template.tex
