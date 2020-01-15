@@ -75,8 +75,8 @@ $endif$
 \hypersetup
 {
   pdfauthor={$author$},
-  pdfsubject=Invoice Nr. $invoice-nr$,
-  pdftitle=Invoice Nr. $invoice-nr$,
+  pdftitle=Invoice \#$invoice-nr$,
+  pdfsubject={$date$},
   linkcolor=blue,
   citecolor=blue,
   filecolor=black,
@@ -84,10 +84,9 @@ $endif$
 }
 
 % To display custom date
-% \usepackage[nodayofweek]{datetime}
-% \newdate{date}{01}{12}{1867}
-% \date{\displaydate{date}}
-% Use this instead of \today: % \displaydate{date}
+\usepackage{datetime2}
+\renewcommand{\today}{\DTMdate{$date$}}
+\date{\today}
 
 % DOCUMENT
 %--------------------------------
