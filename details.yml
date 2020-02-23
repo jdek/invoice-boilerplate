@@ -6,8 +6,8 @@ city: Musterstadt
 from:
 - Musterstraße 37
 - 12345 Musterstadt
+client: Erika Mustermann
 to:
-- Erika Mustermann
 - Musterallee 1
 - 12345 Musterstadt
 - Germany

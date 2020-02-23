@@ -91,15 +91,17 @@ $endif$
 % DOCUMENT
 %--------------------------------
 \begin{document}
-\small
-\textsc{\textbf{$author$}}
+\normalsize \sffamily
+\begin{flushright}
+\textbf{$author$}\\
 $for(from)$
-\textbullet{} \textsc{$from$}
+$from$\\
 $endfor$
+\end{flushright}
 
 \vspace{1em}
 
-\normalsize \sffamily
+\textbf{$client$}\\
 $for(to)$
 $to$\\
 $endfor$
